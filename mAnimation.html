@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Animation and Drop Down</title>
+
+	<style>
+	body{
+		width: 100%;
+		margin: 0;
+	}
+	ul li{
+		display:inline;
+		list-style: none;
+		}
+
+	ul{
+		background:#320222;
+		}
+
+		li a{
+			display:inline-block;
+			color:white;
+			text-align:center;
+			padding:14px 16px;
+			text-decoration:none;
+           } 
+
+           li a:hover, .dropMn:hover{
+			background-color:#2F52E0;
+		}
+		.dropMn{
+			display:inline-block;
+		}
+		.rsContent{
+			display:none;
+			position:absolute;
+			background-color:#f9f9f9;
+			min-width:160px;
+			box-shadow:0 8px 16px 0 rgba(0,0,0,0.2);
+		}
+		.rsContent a{
+			color:black;
+			padding: 12px 16px;
+			text-decoration: none;
+			display: block;
+			text-align:left;
+		}
+		.rsContent a:hover{
+			background-color:#f1f1f1;
+		}
+		.dropMn:hover .rsContent{
+			display:block;
+			z-index: 1;
+		}
+		#inner{
+			height:50px;
+			width:50px;
+			border-radius: 25px;
+			background: #FE4A49;
+			position: absolute;
+		   }
+
+		#outer {
+			height: 1000px;
+			width: 1000px;
+			background-image: url("images (1).jpeg");
+			background-size:cover;
+			position:relative;
+		   }
+		
+		
+	</style>
+
+</head>
+<body>
+<ul>
+	<li><a href="#" class="home">Home</a></li>
+	<li class = "dropMn"><a class="dropbtn" href="#">Drop</a>
+
+	<div class= "rsContent">
+		<a href="#">Barre Spiral</a>
+		<a href="#">Elliptical</a>
+		<a href="#">Lenticular</a>
+	</div>
+		
+		<li><a href="#">Next</a></li>
+	</li>
+</ul>
+
+<center>
+	<div id="outer">
+
+		<div id="inner">
+		  <img src="images.jpeg" style="width: 100px; height: 100px;">		
+		</div>
+
+	</div>
+		<button onclick="TryMe()">Try Me</button>
+</center>
+
+
+<script type="text/javascript">
+function TryMe() {
+	var innrGlexy = document.getElementById("inner");
+	var pos = 0;
+	var id = setInterval(frame, 5);
+	function frame(){
+		if (pos == 910){
+			clearInterval(id);
+         }
+         else{
+				pos++;
+				innrGlexy.style.left = pos + "px";
+				innrGlexy.style.bottom = pos + "px";
+			}
+
+     }    }
+	
+</script>
+
+
+</div>
+
+</body>
+</html>
